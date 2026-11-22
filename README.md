@@ -7,6 +7,26 @@ Architecture notes for a self-hosted home automation and AI operations platform,
 > design: the layers, how each one depends on the others, the decisions behind them and the failures that
 > shaped them. The self-contained pieces that *can* be reused live in their own repositories, linked below.
 
+## What it looks like
+
+Real screens from the running system. Each one is published in its own repository, linked under
+[Reusable pieces](#reusable-pieces).
+
+<table>
+<tr>
+<td width="50%"><img src="docs/images/container-galaxy.jpg" alt="Containers on both hosts rendered as a galaxy with live telemetry"><br><sub><b>Containers.</b> Both hosts rendered as a galaxy with live CPU, memory and restart state (kittlerverse).</sub></td>
+<td width="50%"><img src="docs/images/tv-home.jpg" alt="Android TV home screen with house sensors, camera, lights and media"><br><sub><b>TV.</b> Android TV home screen with sensors, a live camera, light controls and the next episode (skippy-tv).</sub></td>
+</tr>
+<tr>
+<td width="50%"><img src="docs/images/cockpit-audit.jpg" alt="Session archive with a daily audit dashboard"><br><sub><b>AI operations.</b> Archive of every agent session across machines, with the nightly audit (cockpit).</sub></td>
+<td width="50%"><img src="docs/images/kitchen-display.jpg" alt="Kitchen TV showing album art and a recipe overlay"><br><sub><b>Automation.</b> Kitchen TV that switches to album art and a recipe when music starts (kitchen-cast).</sub></td>
+</tr>
+<tr>
+<td width="50%"><img src="docs/images/dictation-jira.png" alt="Dictation app turning speech into Jira notes"><br><sub><b>Voice at work.</b> Speech in Portuguese, Spanish or English turned into Jira notes (bananaphone).</sub></td>
+<td width="50%" align="center"><img src="docs/images/watch-face.jpg" width="300" alt="Wear OS watch face with weather and a day/night scene"><br><sub><b>Watch.</b> Wear OS face tied to real sun and weather; the same watch runs the voice client (aurora-sweep-watchface).</sub></td>
+</tr>
+</table>
+
 ## What it is
 
 Skippy is the name of the whole system and of the AI persona that talks to the house. It started as a Home
@@ -102,6 +122,8 @@ These started as parts of Skippy and were extracted into standalone, documented 
 | [skippy-tv](https://github.com/cascodigital/skippy-tv) | Automation / UI | Android TV home screen with live Home Assistant and Plex cards, a low-latency camera view and light controls. |
 | [subtitle-auto-translator](https://github.com/cascodigital/subtitle-auto-translator) | Containers | Nightly batch job that extracts and translates subtitles for a media library, with a self-hosted fallback translator. One of the jobs the absence-of-signal watchdog tracks. |
 | [hardmob-monitor](https://github.com/cascodigital/hardmob-monitor) | Containers | Small two-container service that turns a forum with no RSS into a token-protected feed. |
+| [bananaphone](https://github.com/cascodigital/bananaphone) | AI operations | Desktop dictation that turns speech in three languages into polished text and Jira notes, with a language coach. |
+| [kittlerverse](https://github.com/cascodigital/kittlerverse) | Containers | Both Docker hosts rendered as an interactive galaxy with live telemetry and controls. |
 | [aurora-sweep-watchface](https://github.com/cascodigital/aurora-sweep-watchface) | Hardware / UI | Wear OS watch face tied to real sun, weather and season; the same watch runs the voice client tile. |
 
 ## Engineering highlights
